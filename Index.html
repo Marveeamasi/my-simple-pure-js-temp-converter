@@ -1,0 +1,42 @@
+<form>
+  <label for="celsius">Celsius:</label><br />
+  <input type="number" id="celsius" value="0">
+  <br /><br />
+  <label for="fahr">Fahrenheit:</label><br />
+  <input type="number" id="fahr" value="32">
+</form>
+<style>
+label {
+    font-weight: bold;
+    font-size: 16px;
+    color: #FFF;
+    padding-left: 10px;
+    line-height: 1.5;
+}
+body {
+    background-color: #202124;
+}
+input {
+    border-radius: 15px;
+    border: 2px solid #3c4043;
+    font-size: 18px;
+    line-height: 1.5;
+    outline: none;
+    font-weight: bold;
+    color: #FFFFFF;
+    padding: 5px 10px 5px 10px;
+    background-color: #303134;
+}
+</style>
+<script>
+window.onload = function() {
+  let c = document.getElementById("celsius");
+  let f = document.getElementById("fahr");
+  c.oninput = function() {
+      f.value = (c.value * 9/5) + 32;
+  };
+  f.oninput = function() {
+      c.value = (f.value - 32) * 5/9;
+  }
+};
+</script>
